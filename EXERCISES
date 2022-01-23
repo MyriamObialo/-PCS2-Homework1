@@ -1,0 +1,666 @@
+My hackerrank name is : https://www.hackerrank.com/obialo_1942326
+
+
+#BASIC DATA TYPES(5)
+
+EXERCISE 1 List Comprehensions
+x = int(input())
+y = int(input())
+z = int(input())
+n = int(input())
+s=list()
+for i in range(x+1):
+    for u in range(y+1):
+        for t in range(z+1):
+            if (i+u+t) != n:
+                s.append([i,u,t])
+print(s)
+
+EXERCISE 2 Basic data types
+N = int(input())
+r= list()
+for x in range(N):
+    l= list(input().split())
+    for x in range(1,len(l)):
+        l[x]=int(l[x])
+    if l[0]=="append":
+        r.append(l[1]) 
+    if l[0]=="insert":
+        r.insert(l[1],l[2])
+    if l[0]=="print":
+        print(r)
+    if l[0]=="remove":
+        r.remove(l[1])
+    if l[0]=="sort":
+        r.sort()
+    if l[0]=="pop":
+        r.pop()
+    if l[0]=="reverse":
+        r.reverse()
+
+EXERCISE 3 PRINT FUNCTION
+i=int(input()) 
+if 1<=i<=150:
+    for t in range(1,i+1): 
+        print(t,end="")
+    print() 
+    
+#EXERCISE 4 Find the Runner-Up Score!
+n=int(input())
+arr=list(map(int,input().split()))
+
+if int(n)==len(arr):
+    if 2<=n<=10 and -100<=len(arr)<=100:
+        the_max= max(arr)
+        arr2= list(dict.fromkeys(arr))
+        for x in arr2:
+            if x== the_max:
+                arr2.remove(x)
+print(max(arr2))
+
+EXERCISE 5 Finding the percentage
+n = int(input())
+student_marks= {}
+for _ in range(n):
+    name, *line = input().split()
+    scores = list(map(float, line))
+    student_marks[name] = scores
+query_name = input()
+if query_name in student_marks:
+    b= list(student_marks[query_name])
+    print(b)
+    t=float(sum(b))
+    print(t)
+    print(format(sum(b)/3,".2f"))
+
+EXERCISE 6 Tuples
+    n = int(raw_input())
+    integer_list = tuple(map(int, raw_input().split()))
+    print(hash(integer_list))
+-------------------------
+#STRINGS(5)
+EXERCISE 1 What's your name? 
+def print_full_name(first, last):
+    if len(first) <=10 and len(last)<=10:
+        print("Hello "+first+ " "+ last+"! You just delved into python.")
+
+EXERCISE 2 Mutations
+def mutate_string(string, position, character):
+    t=list(string)
+    t[position]=character
+    x= "".join(t)
+    return x
+
+EXERCISE 3 SWAP CASE
+def swap_case(s):
+    t_list=list(s)
+    new_list=list()
+    for x in t_list:
+        if x==x.upper():
+            x=x.lower()
+            new_list.append(x)
+        elif x==x.lower():
+            x=x.upper()
+            new_list.append(x)
+        t="".join(new_list)
+    return t
+
+EXERCISE 4 Capitalize! 
+def solve(s):
+    l=s.split(" ")
+    new_list=list()
+    if 0<len(s)<1000:
+        for x in l:
+            y=x.capitalize()
+            new_list.append(y)
+            t= " ".join(new_list)
+        return t
+        
+EXERCISE 5 Split and join
+def split_and_join(line):
+    a=line.split()
+    l= "-".join(a)
+    return l 
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
+    
+-------------------------
+#SETS(4)
+EXERICSE 1 .add()
+n= int(input())
+stamps_set=set()
+for i in range(n):
+    stamps_set.add(input())
+print(len(stamps_set))
+
+EXERCISE 2 .union()
+n= int(input())
+n_students=set(input().split())
+b= int(input())
+b_students= set(input().split())
+s=n_students.union(b_students)
+counter= 0
+for x in s:
+    if x in b_students and n_students:
+        counter+=1
+    else:
+        counter+=1
+print(counter)
+
+EXERCISE 3 .intersection()
+n= int(input())
+n_students= set(input().split())
+b= int(input())
+b_students= set(input().split())
+s= n_students.intersection(b_students)
+counter=0
+for x in s:
+    if x in b_students and n_students:
+        counter+=1
+    else:
+        counter+=1
+print(counter) 
+
+EXERCISE 4 .difference()
+n= int(input())
+n_students= set(input().split())
+b= int(input())
+b_students= set(input().split())
+counter=0
+for x in n_students.difference(b_students):
+    if x in b_students and n_students:
+        counter+=1
+    else:
+        counter+=1
+print(counter)
+
+EXERCISE 5 .discard(), .remove(), .pop()
+n = int(input())
+s = set(map(int, input().split()))
+n_c= int(input())
+for x in range(n_c):
+    t=list(input().split())
+    if t[0]== "pop":
+        s.pop()
+    elif t[0]== "remove":
+        s.remove(int(t[1]))
+    elif t[0]== "discard":
+        s.discard(int(t[1]))
+print(sum(s))
+
+-------------------------
+#MATH(4)
+EXERCISE 1 DIVISION 
+a = int(input())
+b = int(input())
+result= int(a/b)
+result_1=float(a/b)
+print(result)
+print(result_1)
+
+EXERCISE 2 ARITHMETIC OPERATORS 
+a = int(input())
+b = int(input())
+limit= list(range(1,pow(10,10)))
+if a & b in limit:
+    print(a+b)
+    print(a-b)
+    print(a*b)
+    
+EXERCISE 3 MOD DIVMOD
+a= int(input())
+b= int(input())
+a_b= str(a//b)
+a__b= str(a%b)
+print(a_b)
+print(a__b)
+print("("+a_b+", "+a__b+")")
+
+EXERCISE 4 MOD POWER
+a=int(input())
+b=int(input())
+m=int(input())
+list_a= [1,2,3,4,5,6,7,8,9,10]
+if a in list_a:
+    if b in list_a:
+        if m in list(range(1,1001)):
+            print(pow(a,b))
+            print(pow(a,b,m))
+
+
+EXERCISE 5 Integers Come In All Sizes
+a=int(input())
+b=int(input())
+c=int(input())
+d=int(input())
+calculation= pow(a,b)+pow(c,d)
+numbers_list= list(range(0,1001))
+if a&b&c&d in numbers_list:
+    print(calculation)
+
+EXERCISE 6 Polar Coordinates 
+import math
+z= complex(input())
+r= abs(complex(z))
+import cmath 
+q= cmath.phase(complex(z))
+print(r)
+print(q)
+
+EXERCISE 7 Find Angle MBC
+AB= int(input())
+BC= int(input())
+import math
+if 0<AB<=100 and 0<BC <=100: 
+    MBC=math.atan(AB/BC)
+    print(str(round(math.degrees(MBC)))+chr(176))
+-------------------------
+#ITERTOOLS (4)
+EXERCISE 1 ITERTOOL.PRODUCT
+from itertools import product
+import itertools
+a= list(map(int,(input().split(' '))))
+b= list(map(int,(input().split(' '))))
+print(a)
+print(b)
+for i in itertools.product(a,b):
+    print(i,end=" ")
+print()
+
+EXERCISE 2 itertools.permutations
+from itertools import permutations
+string= input().split()
+l=list(string)
+r= "".join(string[0])
+e= int("".join(string[1]))
+if 0<=e<=len(r):
+    perms=list(["".join(p) for p in permutations(r,e)])
+    perms.sort()
+    for x in perms:
+        print(x)
+
+EXERCISE 3 itertools.combinations
+from itertools import combinations
+string= input().split()
+t=list(string[0])
+t.sort()
+r="".join(t)
+e=int("".join(string[1]))
+if 0<=e<=len(r):
+    for x in range(1,e+1):
+        combs= list(["".join(p) for p in combinations(r,x)])
+        for i in combs:
+            print(i)
+
+EXERCISE 4 itertools.combinations with replacement
+from itertools import combinations_with_replacement
+s=input().split()
+t=list(s[0])
+t.sort()
+r= "".join(t)
+numb= int(s[1])
+if 0<=numb<=len(t):
+    comb= list(["".join(x) for x in combinations_with_replacement(r,numb)])
+    for elem in comb:
+        print(elem)
+
+-------------------------
+#COLLECTIONS(4)
+
+EXERCISE 1 Collections.deque() 
+from collections import deque
+n= int(input())
+d=deque()
+for x in range(n):
+    t=list(input().split())
+    if t[0]=="append":
+        d.append(int(t[1]))
+    if t[0]== "appendleft":
+        d.appendleft(int(t[1]))
+    if t[0]== "pop":
+        d.pop()
+    if t[0]=="popleft":
+        d.popleft()
+for u in d:
+    print(u, end=" ")
+ 
+EXERCISE 2 Counter
+from collections import Counter
+
+n_s= int(input())
+l_shoes= Counter(list(map(int,input().split())))
+n_c= int(input())
+money= 0 
+for i in range(n_c):
+    size= list(map(int,input().split()))
+    if l_shoes[size[0]] != 0: 
+        money += size[1]
+        l_shoes[size[0]] -= 1
+print(money)
+
+EXERCISE 3 Company logo 
+from collections import Counter
+
+s = sorted(input())  
+t= Counter(s)
+for i,t in t.most_common(3):
+    print("%s %d" % (i,t))
+
+EXERCISE 4 Word Order  
+from collections import Counter
+from collections import OrderedDict
+
+n=int(input())
+list1= list()
+for i in range(0,n):
+    list1.append(input())
+
+print(len(list(OrderedDict.fromkeys(list1))))
+    
+c=Counter(list1)
+u=list(c.values())
+for each in u:
+    print(each, end= " ")
+print()
+
+-------------------------
+#ALGORITHM WARMUP(10)
+EXERCISE 1 Staircase
+def staircase(n):
+    for i in range(1,n+1):
+        print (("#"*i).rjust(n))
+
+EXERCISE 2 Compare the Triplets
+def compareTriplets(a, b):
+    count_a=0
+    count_b=0
+    if a[0]>b[0]:
+        count_a += 1
+    elif a[0]<b[0]:
+        count_b += 1
+    if a[1]>b[1]:
+        count_a += 1 
+    elif a[1] < b[1]:
+        count_b += 1
+    if a[2] > b[2]:
+        count_a += 1
+    elif a[2]<b[2]:
+        count_b += 1
+    return (count_a,count_b)
+
+EXERCISE 3 Birthday cake candles
+def birthdayCakeCandles(candles):
+    from collections import Counter
+    c= Counter(candles)
+    a=c.items()
+    t=max(a)
+    return (t[1])
+
+EXERCISE 4 Time Conversion
+def timeConversion(s):
+    if s[8:]=="PM":
+        a=int(s[:2])
+        if int(s[:2]) <12:
+            a+=12
+            return str(a)+ s[2:-2]
+        else: 
+            return (s[:8])
+    if s[8:]== "AM":
+        if int(s[:2])==12:
+            return("00"+s[2:-2])
+        else:
+            return(s[:8])
+
+EXERCISE 5 solve me first
+def solveMeFirst(a,b):
+    result=(a+b)
+    return result
+
+EXERCISE 6 A very big sum
+def aVeryBigSum(ar):
+    s=sum(ar)
+    return s
+
+EXERCISE 7 diagonal difference
+def diagonalDifference(arr):
+    n=len(arr)
+    sum1=0
+    sum2=0
+    for x in range(n):
+        sum1 += arr[x][x]
+        sum2 += arr[x][n-1-x]
+    return abs(sum1-sum2)
+
+EXERCISE 8 Mini-Max sum
+def miniMaxSum(arr):
+    a= sorted(arr)
+    b= sum(a[:-1])
+    c= sum(a[1:])
+    print (b,c) 
+
+EXERCISE 9 PlusMinus
+def plusMinus(arr):
+    positive= list()
+    negative= list()
+    zero= list()
+    n=len(arr)
+    for x in arr:
+        if x>0:
+            positive.append(x)
+        if x<0:
+            negative.append(x)
+        if x==0:
+            zero.append(x)
+    print('{0:.6f}'.format(len(positive)/n))
+    print('{0:.6f}'.format(len(negative)/n))
+    print('{0:.6f}'.format(len(zero)/n))  
+
+EXERCISE 10 simple array sum 
+def simpleArraySum(ar):
+    return (sum(ar))
+-------------------------
+#ALGORITHM SORTING (10)
+
+EXERCISE 1 Sorting find the median
+def findMedian(arr):
+    arr.sort()
+    t= len(arr)//2
+    return (arr[t])
+    
+EXERCISE 2 Sorting running time 
+def runningTime(arr):
+    count=0
+    a=len(arr)
+    for x in range(a):
+        for i in range(x,a):
+            if arr[x]>arr[i]:
+                count+=1
+    return count
+
+EXERCISE 3 Quicksort1
+def quickSort(arr):
+    l=len(arr)
+    a=list()
+    b=list()
+    if l <=1:
+        return arr
+    else:
+        p= arr.pop()
+    for i in arr:
+        if i>p:
+            a.append(i)
+        else:
+            b.append(i)
+    t= quickSort(b)+[p]+quickSort(a)
+    return t
+
+EXERCISE 4 Counting sort 1
+def countingSort(arr):
+    count= [0]*100
+    for i in arr:
+        count[i] +=1
+    return count
+        
+EXERCISE 5 Counting sort 2
+def countingSort(arr):
+    count=[0] * (max(arr)+1)
+    for x in arr:
+        count[x] +=1
+    a=list()
+    for i in range (len(count)):
+        while count[i] !=0:
+            count[i] -=1
+            a.append(i)
+    return a
+
+EXERCISE 6 Insertion sort 1
+def insertionSort1(n, arr):
+    a= arr[-1]
+    i= n-1
+    while i >0 and arr[i-1] > a:
+        arr[i]=arr[i-1]
+        print(*arr)
+        i-=1
+    arr[i]=a
+    print(*arr)
+
+EXERCISE 7 Insertion sort2
+def insertionSort2(n, arr):
+    for i in range(1,n):
+        a= arr[i]
+        t=i      
+        while t>0 and arr[t-1]>a:
+            arr[t]=arr[t-1]
+            #print(*arr)
+            t-=1
+        arr[t]=a
+        print(*arr)
+
+EXERCISE 8 Big sorting
+
+def bigSorting(unsorted):
+    t=sorted(unsorted,key=lambda x:(len(x),x))
+    return t
+
+EXERCISE 9 Sorting Intro 
+def introTutorial(V, arr):
+    t=arr.index(V)
+    return t
+
+EXERCISE 10 Closest Number 
+def closestNumbers(arr):
+    arr.sort()
+    a= list()
+    p=float("inf")
+    for i in range(len(arr)-1):
+        p=min(arr[i+1] - arr[i], p)
+    for i in range(len(arr)-1):
+        if arr[i+1]-arr[i]==p:
+            a.append(arr[i])
+            a.append(arr[i+1])
+    return a
+-------------------------
+# ALGORITHM STRINGS(5)
+
+EXERCISE 1 Strong Password
+def minimumNumber(n, password):
+    sp="!@#$%^&*()-+"
+    numbers= "0123456789"
+    lower="abcdefghilmnopqrstuvwxyz"
+    upper="ABCDEFGHILMNOPQRSTUVWXYZ"
+    count=[0,0,0,0]
+    for element in password:
+        if element in numbers:
+            count[0]=1
+        if element in lower:
+            count[1]=1
+        if element in upper:
+            count[2]=1
+        if element in sp:
+            count[3]=1
+    return max (6-len(password),4 - sum(count))
+
+EXERCISE 2 Game Of Thrones
+def gameOfThrones(s):
+    from collections import Counter
+    c=Counter(list(s))
+    t=list(c.items())
+    count=0
+    for x in t:
+        if x[1] % 2 != 0:
+            count+=1
+    if count>1:
+        return ("NO")
+    else:
+        return("YES")
+
+EXERCISE 3 Two strings
+def twoStrings(s1, s2):
+    e=list()
+    for x in s1:
+        if x in s2:
+            e.append(x)
+    if len(e)>=1:
+        return ("YES")
+    else:
+        return("NO")
+
+EXERCISE 4 Making Anagrams
+from collections import Counter
+def makingAnagrams(s1, s2):
+    s=Counter(s1)
+    t=Counter(s2)
+    sub= (s-t)
+    a_sub= (t-s)
+    result= sub + a_sub
+    l=list(result.values())
+    return (sum(l))
+
+
+EXERCISE 5 CamelCase
+def camelcase(s):
+    count=1
+    for x in s:
+        if x==x.upper():
+            count +=1 
+    return count
+
+EXERCISE 6 Mars Exploration 
+from textwrap import wrap
+def marsExploration(s):
+    time=len(s)//3
+    c=0
+    l=list()
+    l=wrap(s,3)
+    for x in l:
+        if x[0]!="S":
+            c+=1
+        if x[1]!="O":
+            c+=1
+        if x[2]!="S":
+            c+=1
+    return c
+    
+    
+  #Some small other exercises
+EXERCISE 1 LOOPS
+n= int(input())
+n_int= (1<=n<=20)
+if n in n_int: 
+    n_m= list(range(0,n))
+    for i in n_m: 
+        print(i**2)
+
+EXERCISE 2 IF-ELSE
+n = int(input().strip())
+num_list= list(range(1,100+1))
+if n in num_list: 
+    if (n % 2)== 0: 
+        if (6<=n<=20):
+            print("Weird")
+        elif (2<=n<=5) | (n>20): 
+            print("Not Weird")
+    else:
+        print("Weird")        
