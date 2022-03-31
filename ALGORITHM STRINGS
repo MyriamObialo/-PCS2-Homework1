@@ -1,0 +1,79 @@
+
+EXERCISE 1 Strong Password
+def minimumNumber(n, password):
+    sp="!@#$%^&*()-+"
+    numbers= "0123456789"
+    lower="abcdefghilmnopqrstuvwxyz"
+    upper="ABCDEFGHILMNOPQRSTUVWXYZ"
+    count=[0,0,0,0]
+    for element in password:
+        if element in numbers:
+            count[0]=1
+        if element in lower:
+            count[1]=1
+        if element in upper:
+            count[2]=1
+        if element in sp:
+            count[3]=1
+    return max (6-len(password),4 - sum(count))
+
+EXERCISE 2 Game Of Thrones
+def gameOfThrones(s):
+    from collections import Counter
+    c=Counter(list(s))
+    t=list(c.items())
+    count=0
+    for x in t:
+        if x[1] % 2 != 0:
+            count+=1
+    if count>1:
+        return ("NO")
+    else:
+        return("YES")
+
+EXERCISE 3 Two strings
+def twoStrings(s1, s2):
+    e=list()
+    for x in s1:
+        if x in s2:
+            e.append(x)
+    if len(e)>=1:
+        return ("YES")
+    else:
+        return("NO")
+
+EXERCISE 4 Making Anagrams
+from collections import Counter
+def makingAnagrams(s1, s2):
+    s=Counter(s1)
+    t=Counter(s2)
+    sub= (s-t)
+    a_sub= (t-s)
+    result= sub + a_sub
+    l=list(result.values())
+    return (sum(l))
+
+
+EXERCISE 5 CamelCase
+def camelcase(s):
+    count=1
+    for x in s:
+        if x==x.upper():
+            count +=1 
+    return count
+
+EXERCISE 6 Mars Exploration 
+from textwrap import wrap
+def marsExploration(s):
+    time=len(s)//3
+    c=0
+    l=list()
+    l=wrap(s,3)
+    for x in l:
+        if x[0]!="S":
+            c+=1
+        if x[1]!="O":
+            c+=1
+        if x[2]!="S":
+            c+=1
+    return c
