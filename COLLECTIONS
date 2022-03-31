@@ -1,0 +1,55 @@
+EXERCISE 1 Collections.deque() 
+from collections import deque
+n= int(input())
+d=deque()
+for x in range(n):
+    t=list(input().split())
+    if t[0]=="append":
+        d.append(int(t[1]))
+    if t[0]== "appendleft":
+        d.appendleft(int(t[1]))
+    if t[0]== "pop":
+        d.pop()
+    if t[0]=="popleft":
+        d.popleft()
+for u in d:
+    print(u, end=" ")
+ 
+EXERCISE 2 Counter
+from collections import Counter
+
+n_s= int(input())
+l_shoes= Counter(list(map(int,input().split())))
+n_c= int(input())
+money= 0 
+for i in range(n_c):
+    size= list(map(int,input().split()))
+    if l_shoes[size[0]] != 0: 
+        money += size[1]
+        l_shoes[size[0]] -= 1
+print(money)
+
+EXERCISE 3 Company logo 
+from collections import Counter
+
+s = sorted(input())  
+t= Counter(s)
+for i,t in t.most_common(3):
+    print("%s %d" % (i,t))
+
+EXERCISE 4 Word Order  
+from collections import Counter
+from collections import OrderedDict
+
+n=int(input())
+list1= list()
+for i in range(0,n):
+    list1.append(input())
+
+print(len(list(OrderedDict.fromkeys(list1))))
+    
+c=Counter(list1)
+u=list(c.values())
+for each in u:
+    print(each, end= " ")
+print()
