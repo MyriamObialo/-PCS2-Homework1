@@ -1,0 +1,61 @@
+EXERICSE 1 .add()
+n= int(input())
+stamps_set=set()
+for i in range(n):
+    stamps_set.add(input())
+print(len(stamps_set))
+
+EXERCISE 2 .union()
+n= int(input())
+n_students=set(input().split())
+b= int(input())
+b_students= set(input().split())
+s=n_students.union(b_students)
+counter= 0
+for x in s:
+    if x in b_students and n_students:
+        counter+=1
+    else:
+        counter+=1
+print(counter)
+
+EXERCISE 3 .intersection()
+n= int(input())
+n_students= set(input().split())
+b= int(input())
+b_students= set(input().split())
+s= n_students.intersection(b_students)
+counter=0
+for x in s:
+    if x in b_students and n_students:
+        counter+=1
+    else:
+        counter+=1
+print(counter) 
+
+EXERCISE 4 .difference()
+n= int(input())
+n_students= set(input().split())
+b= int(input())
+b_students= set(input().split())
+counter=0
+for x in n_students.difference(b_students):
+    if x in b_students and n_students:
+        counter+=1
+    else:
+        counter+=1
+print(counter)
+
+EXERCISE 5 .discard(), .remove(), .pop()
+n = int(input())
+s = set(map(int, input().split()))
+n_c= int(input())
+for x in range(n_c):
+    t=list(input().split())
+    if t[0]== "pop":
+        s.pop()
+    elif t[0]== "remove":
+        s.remove(int(t[1]))
+    elif t[0]== "discard":
+        s.discard(int(t[1]))
+print(sum(s))
