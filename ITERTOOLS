@@ -1,0 +1,47 @@
+EXERCISE 1 ITERTOOL.PRODUCT
+from itertools import product
+import itertools
+a= list(map(int,(input().split(' '))))
+b= list(map(int,(input().split(' '))))
+print(a)
+print(b)
+for i in itertools.product(a,b):
+    print(i,end=" ")
+print()
+
+EXERCISE 2 itertools.permutations
+from itertools import permutations
+string= input().split()
+l=list(string)
+r= "".join(string[0])
+e= int("".join(string[1]))
+if 0<=e<=len(r):
+    perms=list(["".join(p) for p in permutations(r,e)])
+    perms.sort()
+    for x in perms:
+        print(x)
+
+EXERCISE 3 itertools.combinations
+from itertools import combinations
+string= input().split()
+t=list(string[0])
+t.sort()
+r="".join(t)
+e=int("".join(string[1]))
+if 0<=e<=len(r):
+    for x in range(1,e+1):
+        combs= list(["".join(p) for p in combinations(r,x)])
+        for i in combs:
+            print(i)
+
+EXERCISE 4 itertools.combinations with replacement
+from itertools import combinations_with_replacement
+s=input().split()
+t=list(s[0])
+t.sort()
+r= "".join(t)
+numb= int(s[1])
+if 0<=numb<=len(t):
+    comb= list(["".join(x) for x in combinations_with_replacement(r,numb)])
+    for elem in comb:
+        print(elem)
