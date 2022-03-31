@@ -1,0 +1,20 @@
+  #Some small other exercises
+EXERCISE 1 LOOPS
+n= int(input())
+n_int= (1<=n<=20)
+if n in n_int: 
+    n_m= list(range(0,n))
+    for i in n_m: 
+        print(i**2)
+
+EXERCISE 2 IF-ELSE
+n = int(input().strip())
+num_list= list(range(1,100+1))
+if n in num_list: 
+    if (n % 2)== 0: 
+        if (6<=n<=20):
+            print("Weird")
+        elif (2<=n<=5) | (n>20): 
+            print("Not Weird")
+    else:
+        print("Weird")
