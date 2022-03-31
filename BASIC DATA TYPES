@@ -1,0 +1,74 @@
+EXERCISE 1 List Comprehensions
+x = int(input())
+y = int(input())
+z = int(input())
+n = int(input())
+s=list()
+for i in range(x+1):
+    for u in range(y+1):
+        for t in range(z+1):
+            if (i+u+t) != n:
+                s.append([i,u,t])
+print(s)
+
+EXERCISE 2 Basic data types
+N = int(input())
+r= list()
+for x in range(N):
+    l= list(input().split())
+    for x in range(1,len(l)):
+        l[x]=int(l[x])
+    if l[0]=="append":
+        r.append(l[1]) 
+    if l[0]=="insert":
+        r.insert(l[1],l[2])
+    if l[0]=="print":
+        print(r)
+    if l[0]=="remove":
+        r.remove(l[1])
+    if l[0]=="sort":
+        r.sort()
+    if l[0]=="pop":
+        r.pop()
+    if l[0]=="reverse":
+        r.reverse()
+
+EXERCISE 3 PRINT FUNCTION
+i=int(input()) 
+if 1<=i<=150:
+    for t in range(1,i+1): 
+        print(t,end="")
+    print() 
+    
+#EXERCISE 4 Find the Runner-Up Score!
+n=int(input())
+arr=list(map(int,input().split()))
+
+if int(n)==len(arr):
+    if 2<=n<=10 and -100<=len(arr)<=100:
+        the_max= max(arr)
+        arr2= list(dict.fromkeys(arr))
+        for x in arr2:
+            if x== the_max:
+                arr2.remove(x)
+print(max(arr2))
+
+EXERCISE 5 Finding the percentage
+n = int(input())
+student_marks= {}
+for _ in range(n):
+    name, *line = input().split()
+    scores = list(map(float, line))
+    student_marks[name] = scores
+query_name = input()
+if query_name in student_marks:
+    b= list(student_marks[query_name])
+    print(b)
+    t=float(sum(b))
+    print(t)
+    print(format(sum(b)/3,".2f"))
+
+EXERCISE 6 Tuples
+    n = int(raw_input())
+    integer_list = tuple(map(int, raw_input().split()))
+    print(hash(integer_list))
