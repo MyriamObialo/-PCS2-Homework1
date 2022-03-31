@@ -1,0 +1,93 @@
+EXERCISE 1 Staircase
+def staircase(n):
+    for i in range(1,n+1):
+        print (("#"*i).rjust(n))
+
+EXERCISE 2 Compare the Triplets
+def compareTriplets(a, b):
+    count_a=0
+    count_b=0
+    if a[0]>b[0]:
+        count_a += 1
+    elif a[0]<b[0]:
+        count_b += 1
+    if a[1]>b[1]:
+        count_a += 1 
+    elif a[1] < b[1]:
+        count_b += 1
+    if a[2] > b[2]:
+        count_a += 1
+    elif a[2]<b[2]:
+        count_b += 1
+    return (count_a,count_b)
+
+EXERCISE 3 Birthday cake candles
+def birthdayCakeCandles(candles):
+    from collections import Counter
+    c= Counter(candles)
+    a=c.items()
+    t=max(a)
+    return (t[1])
+
+EXERCISE 4 Time Conversion
+def timeConversion(s):
+    if s[8:]=="PM":
+        a=int(s[:2])
+        if int(s[:2]) <12:
+            a+=12
+            return str(a)+ s[2:-2]
+        else: 
+            return (s[:8])
+    if s[8:]== "AM":
+        if int(s[:2])==12:
+            return("00"+s[2:-2])
+        else:
+            return(s[:8])
+
+EXERCISE 5 solve me first
+def solveMeFirst(a,b):
+    result=(a+b)
+    return result
+
+EXERCISE 6 A very big sum
+def aVeryBigSum(ar):
+    s=sum(ar)
+    return s
+
+EXERCISE 7 diagonal difference
+def diagonalDifference(arr):
+    n=len(arr)
+    sum1=0
+    sum2=0
+    for x in range(n):
+        sum1 += arr[x][x]
+        sum2 += arr[x][n-1-x]
+    return abs(sum1-sum2)
+
+EXERCISE 8 Mini-Max sum
+def miniMaxSum(arr):
+    a= sorted(arr)
+    b= sum(a[:-1])
+    c= sum(a[1:])
+    print (b,c) 
+
+EXERCISE 9 PlusMinus
+def plusMinus(arr):
+    positive= list()
+    negative= list()
+    zero= list()
+    n=len(arr)
+    for x in arr:
+        if x>0:
+            positive.append(x)
+        if x<0:
+            negative.append(x)
+        if x==0:
+            zero.append(x)
+    print('{0:.6f}'.format(len(positive)/n))
+    print('{0:.6f}'.format(len(negative)/n))
+    print('{0:.6f}'.format(len(zero)/n))  
+
+EXERCISE 10 simple array sum 
+def simpleArraySum(ar):
+    return (sum(ar))
