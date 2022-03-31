@@ -1,0 +1,46 @@
+EXERCISE 1 What's your name? 
+def print_full_name(first, last):
+    if len(first) <=10 and len(last)<=10:
+        print("Hello "+first+ " "+ last+"! You just delved into python.")
+
+EXERCISE 2 Mutations
+def mutate_string(string, position, character):
+    t=list(string)
+    t[position]=character
+    x= "".join(t)
+    return x
+
+EXERCISE 3 SWAP CASE
+def swap_case(s):
+    t_list=list(s)
+    new_list=list()
+    for x in t_list:
+        if x==x.upper():
+            x=x.lower()
+            new_list.append(x)
+        elif x==x.lower():
+            x=x.upper()
+            new_list.append(x)
+        t="".join(new_list)
+    return t
+
+EXERCISE 4 Capitalize! 
+def solve(s):
+    l=s.split(" ")
+    new_list=list()
+    if 0<len(s)<1000:
+        for x in l:
+            y=x.capitalize()
+            new_list.append(y)
+            t= " ".join(new_list)
+        return t
+        
+EXERCISE 5 Split and join
+def split_and_join(line):
+    a=line.split()
+    l= "-".join(a)
+    return l 
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
